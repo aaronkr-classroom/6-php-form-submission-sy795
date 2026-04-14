@@ -9,6 +9,7 @@ function is_password(string $password): bool
         and preg_match('/[A-Z]/', $password)
         and preg_match('/[a-z]/', $password)
         and preg_match('/[0-9]/', $password)
+        and preg_match('/[!@#$%^&*()_-]/', $password)
     ) {
         return true;  // Passed all tests
     }
@@ -31,3 +32,4 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 </form>
 
 <?php include 'includes/footer.php'; ?>
+
